@@ -1,0 +1,46 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+  .rick-girl-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: 4rem;
+    text-align: center;
+    color: #FF69B4; /* Rosa */
+    animation: bounceIn 1.5s ease;
+    text-shadow: 2px 2px 5px #ffaaff;
+  }
+
+  .rick-girl-title span {
+    color: #FFB6C1; /* Rosa claro */
+    text-shadow: 1px 1px 3px #fff0f5;
+  }
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
+
+<div class="row">
+  <div class="col-12">
+    <h1 class="rick-girl-title">
+      Rick<span>-And-</span>Morty
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <rick-search (eventSearch)="searchRick($event)"></rick-search>
+</div>
+<rick-paginacion (eventNewRicks)="setNewRicks($event)"></rick-paginacion>
+<rick-card [ricksAll]="ricks"></rick-card>
+<rick-paginacion></rick-paginacion>
